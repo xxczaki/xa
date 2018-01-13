@@ -27,7 +27,7 @@ bower install xa
 
 ## Usage
 
-``` html
+```html
 xa.js('jquery.js', function(error) {
     /* You could use jQuery functions here! */
 });
