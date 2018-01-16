@@ -1,4 +1,4 @@
-const xa = require('.');
+const xa = require('.'); //You can run 'node example.js' in the project directory to see the output in your terminal!
 
 console.log('');
 
