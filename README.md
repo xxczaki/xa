@@ -9,7 +9,7 @@
 
 ## Installation 
 
-📦 npm
+### 📦 npm
 ``` 
 npm install xa
 ```
