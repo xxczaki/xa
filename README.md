@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="hhttps://i.imgur.com/2n3U5I8.png" href="https://github.com/xxczaki/xa" height="256">
+  <img src="https://i.imgur.com/2n3U5I8.png" href="https://github.com/xxczaki/xa" height="256">
   <h2 align="center">xa</h2>
   <p align="center">Beautiful & Customizable log messages in your terminal ❤<p>
   
