@@ -5,8 +5,10 @@
   
 <p align="center"><a href="https://www.npmjs.com/package/xa"><img src="https://badge.fury.io/js/xa.svg" alt="npm Package"></a>  <a href="https://travis-ci.org/xxczaki/xa"><img src="https://travis-ci.org/xxczaki/xa.svg?branch=master" alt="Build Status"></a> <a href="https://github.com/sindresorhus/xo"><img src="https://img.shields.io/badge/code_style-XO-5ed9c7.svg" alt="XO Code Style"></a> <a href="https://www.youtube.com/watch?v=9auOCbH5Ns4"><img src="https://img.shields.io/badge/unicorn-approved-ff69b4.svg" alt="Unicorn"></a>
   </p>
+  
  
  <p align="center"><img src="https://i.imgur.com/DxjXF8T.png" alt="Screenshot"></p>
+
 
 ## Installation 
 
