@@ -35,7 +35,7 @@ There are 5 options:
   - `command: (cmd)`
   - `link: (url)`
   
-  ### Example
+## Example
 
 ```js
 const xa = require('xa');
