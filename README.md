@@ -57,7 +57,7 @@ xa.warn('WARN', `This module is deprecated! Read more: ${xa.link('http://example
 
 MIT © [Antoni Kepinski](https://akepinski.me)
 
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fxxczaki%2Fxo.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fxxczaki%2Fxo?ref=badge_large)
+<a href="https://app.fossa.io/projects/git%2Bgithub.com%2Fxxczaki%2Fxa?ref=badge_large" alt="FOSSA Status"><img src="https://app.fossa.io/api/projects/git%2Bgithub.com%2Fxxczaki%2Fxa.svg?type=large"/></a>
 
 
 
