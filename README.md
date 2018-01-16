@@ -37,6 +37,8 @@ There are 5 options:
   
 ## Example
 
+> See [example.js](https://github.com/xxczaki/xa/blob/master/example.js) file.
+
 ```js
 const xa = require('xa');
 
