@@ -15,37 +15,34 @@ npm install xa
 
 ## Usage
 
-```js
-const xa = require('xa');
-
-/*
-
-  There are 5 options:
+There are 5 options:
   
-  1. info: (label, message)
-  2. loading: (label, message)
-  3. warn: (label, message)
-  4. experimental: (label, message)
-  5. error: (message)
+- `info: (label, message)`
+
+- `loading: (label, message)`
+
+- `warn: (label, message)`
+
+- `experimental: (label, message)`
+
+- `error: (message)`
   
   You can also highlight commands & links:
   
-  - command: (cmd)
-  - link: (url)
-*/
+  - `command: (cmd)`
+  - `link: (url)`
+  
+  ### Example
+
+```js
+const xa = require('xa');
 
 console.log('');
-
-xa.loading('TEST', 'Running test...');
 
 xa.info('SUCCESS', 'Finished converting file!');
 
 xa.warn('WARN', `This module is deprecated! Read more: ${xa.link('http://example.com')}`);
 
-xa.experimental('EXPERIMENTAL', 'This feature is not implemented yet!');
-
-xa.error('Could not find chalk. Make sure you have installed it!', {
-	exit: false
 });
 ```
 
