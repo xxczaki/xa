@@ -1,0 +1,28 @@
+{
+  "name": "xa",
+  "version": "1.0.0",
+  "description": "Beautiful log messages in your terminal ❤",
+  "main": "index.js",
+  "author": "Antoni Kepinski <hello@akepinski.me> (https://akepinski.me)",
+  "bugs": {
+    "url": "https://github.com/xxczaki/xa/issues"
+  },
+  "license": "MIT",
+  "repository": "xxczaki/xa",
+  "homepage": "https://github.com/xxczaki/xa",
+  "dependencies": {
+    "chalk": "^2.3.0",
+    "log-symbols": "^2.1.0"
+  },
+  "scripts": {
+    "test": "xo"
+  },
+  "xo": {
+    "rules": {
+      "unicorn/no-process-exit": 0
+    }
+  },
+  "devDependencies": {
+    "xo": "^0.18.2"
+  }
+}
