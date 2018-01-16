@@ -11,8 +11,7 @@
   "repository": "xxczaki/xa",
   "homepage": "https://github.com/xxczaki/xa",
   "dependencies": {
-    "chalk": "^2.3.0",
-    "log-symbols": "^2.1.0"
+    "chalk": "^2.3.0"
   },
   "scripts": {
     "test": "xo"
