@@ -1,6 +1,6 @@
 const chalk = require('chalk');
 
-const colorMap = {  //Define colors
+const colorMap = {  // Define colors
 	info: 'green',
 	warn: 'yellow',
 	loading: 'blue',
@@ -8,16 +8,16 @@ const colorMap = {  //Define colors
 	error: 'red'
 };
 
-const print = (type, label, message) => {  
+const print = (type, label, message) => {
 	const color = colorMap[type];
 	console.log(
-    chalk.inverse.bold[color](` ${label} `), //Background color
+    chalk.inverse.bold[color](` ${label} `), // Background color
     chalk[color](message),
     '\n'
   );
 };
 
-const info = (label, message) => print('info', label, message); 
+const info = (label, message) => print('info', label, message);
 const warn = (label, message) => print('warn', label, message);
 const loading = (label, message) => print('loading', label, message);
 const experimental = (label, message) => print('experimental', label, message);
@@ -28,14 +28,14 @@ const link = url => chalk.cyan(url);
 const error = (err, options) => {
 	const label = 'ERROR';
 	if (!options) {
-		options = {exit: true, silent: false, label}; //Error options
+		options = {exit: true, silent: false, label}; // Error options
 	}
 	print('error', options.label || label, err);
 	if (options.silent) {
-		process.exit(1); //Error option - silent
+		process.exit(1); // Error option - silent
 	}
 	if (options.exit) {
-		throw new Error(err); //Error option - exit
+		throw new Error(err); // Error option - exit
 	}
 };
 

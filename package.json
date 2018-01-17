@@ -1,6 +1,6 @@
 {
   "name": "xa",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Beautiful log messages in your terminal ❤",
   "main": "index.js",
   "author": "Antoni Kepinski <hello@akepinski.me> (https://akepinski.me)",
