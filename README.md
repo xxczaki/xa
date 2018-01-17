@@ -8,7 +8,7 @@
   
  
  <p align="center"><img src="https://i.imgur.com/DxjXF8T.png" alt="Screenshot"></p>
-
+travis
 
 ## Installation 
 
