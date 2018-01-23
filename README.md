@@ -12,7 +12,7 @@
 ## Installation 
 
 ``` 
-npm install xa
+npm install --save xa
 ```
 
 ## Usage
