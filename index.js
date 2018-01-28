@@ -5,6 +5,8 @@ const colorMap = {  // Define colors
 	warn: 'yellow',
 	loading: 'blue',
 	experimental: 'magenta',
+	on: 'white',
+	off: 'gray',
 	error: 'red'
 };
 
@@ -20,6 +22,8 @@ const print = (type, label, message) => {
 const info = (label, message) => print('info', label, message);
 const warn = (label, message) => print('warn', label, message);
 const loading = (label, message) => print('loading', label, message);
+const on = (label, message) => print('on', label, message);
+const off = (label, message) => print('off', label, message);
 const experimental = (label, message) => print('experimental', label, message);
 
 const command = cmd => chalk.cyan(cmd);
@@ -39,4 +43,4 @@ const error = (err, options) => {
 	}
 };
 
-module.exports = {info, loading, warn, experimental, error, command, link};
+module.exports = {info, loading, warn, experimental, on, off, error, command, link};

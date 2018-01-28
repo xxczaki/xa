@@ -1,6 +1,6 @@
 {
   "name": "xa",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Beautiful log messages in your terminal ❤",
   "main": "index.js",
   "author": "Antoni Kepinski <hello@akepinski.me> (https://akepinski.me)",
@@ -22,6 +22,6 @@
     }
   },
   "devDependencies": {
-    "xo": "^0.18.2"
+    "xo": "*"
   }
 }
