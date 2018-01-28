@@ -57,6 +57,10 @@ xa.warn('WARN', `This module is deprecated! Read more: ${xa.link('http://example
 });
 ```
 
+## Customize
+
+xa uses [chalk](https://www.npmjs.com/package/chalk) for colorful output, so you can customize technically every color :unicorn: You can also use 2 options for `xa.error` - `silent` or `exit` (see [index.js](https://github.com/xxczaki/xa/blob/5d0d4a627ad8b2928fae474238a4cd26ed63ebad/index.js#L32) for more information).
+
 ## Thanks:
 
 - [Jamen Marzonie](https://www.npmjs.com/~jamen) for providing package name!
