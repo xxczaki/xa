@@ -7,7 +7,7 @@
   </p>
   
  
- <p align="center"><img src="https://i.imgur.com/DxjXF8T.png" alt="Screenshot"></p>
+ <p align="center"><img src="https://i.imgur.com/LxRnkIN.png" alt="Screenshot"></p>
 
 ## Installation 
 
@@ -20,7 +20,7 @@ npm install --save xa
 
 ## Usage
 
-There are 5 options:
+There are 7 options:
   
 - `info: (label, message)`
 
@@ -29,6 +29,10 @@ There are 5 options:
 - `warn: (label, message)`
 
 - `experimental: (label, message)`
+
+- `on: (label, message)`
+
+- `off: (label, message)`
 
 - `error: (message)`
   
