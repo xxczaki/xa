@@ -45,17 +45,7 @@ There are 7 options:
 
 > See [example.js](https://github.com/xxczaki/xa/blob/master/example.js) file.
 
-```js
-const xa = require('xa');
-
-console.log('');
-
-xa.info('SUCCESS', 'Finished converting file!');
-
-xa.warn('WARN', `This module is deprecated! Read more: ${xa.link('http://example.com')}`);
-
-});
-```
+<p><img src="https://i.imgur.com/UjcfM5F.png" alt="Example"></p>
 
 ## Customize
 
