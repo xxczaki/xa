@@ -14,6 +14,8 @@
 
 ## Installation 
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/xxczaki/xa.svg)](https://greenkeeper.io/)
+
 ``` 
 npm install --save xa
 ```
