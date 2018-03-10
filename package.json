@@ -14,7 +14,7 @@
     "chalk": "^2.3.0"
   },
   "scripts": {
-    "test": "xo"
+    "test": "xo --fix"
   },
   "xo": {
     "rules": {
