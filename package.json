@@ -1,6 +1,6 @@
 {
   "name": "xa",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Beautiful log messages in your terminal ❤",
   "main": "index.js",
   "author": "Antoni Kepinski <hello@akepinski.me> (https://akepinski.me)",
@@ -11,10 +11,10 @@
   "repository": "xxczaki/xa",
   "homepage": "https://github.com/xxczaki/xa",
   "dependencies": {
-    "chalk": "^2.3.2"
+    "chalk": "^2.4.1"
   },
   "scripts": {
-    "test": "xo --fix"
+    "test": "xo"
   },
   "xo": {
     "rules": {
