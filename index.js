@@ -1,6 +1,6 @@
 const chalk = require('chalk');
 
-const colorMap = {  // Define colors
+const colorMap = { // Define colors
 	info: 'green',
 	warn: 'yellow',
 	loading: 'blue',
@@ -13,10 +13,10 @@ const colorMap = {  // Define colors
 const print = (type, label, message) => {
 	const color = colorMap[type];
 	console.log(
-    chalk.inverse.bold[color](` ${label} `), // Background color
-    chalk[color](message),
-    '\n'
-  );
+		chalk.inverse.bold[color](` ${label} `), // Background color
+		chalk[color](message),
+		'\n'
+	);
 };
 
 const info = (label, message) => print('info', label, message);
