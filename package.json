@@ -1,9 +1,9 @@
 {
   "name": "xa",
-  "version": "1.0.7",
+  "version": "1.1.0",
   "description": "Beautiful log messages in your terminal ❤",
   "main": "index.js",
-  "author": "Antoni Kepinski <hello@akepinski.me> (https://akepinski.me)",
+  "author": "Antoni Kepinski <a@kepinski.me> (https://kepinski.me)",
   "bugs": {
     "url": "https://github.com/xxczaki/xa/issues"
   },

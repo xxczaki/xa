@@ -1,7 +1,5 @@
 const xa = require('.'); // You can run 'node example.js' in the project directory to see the output in your terminal!
 
-console.log('');
-
 xa.loading('TEST', 'Running test...');
 
 xa.info('SUCCESS', `Finished converting file!`);
@@ -14,6 +12,5 @@ xa.on('ON', 'You turned on unicorn mode!');
 
 xa.off('OFF', 'You turned off unicorn mode!');
 
-xa.error('Could not find chalk. Make sure you have installed it!', {
-	exit: false
-});
+xa.error('Could not find chalk. Make sure you have installed it!', {exit: false});
+
