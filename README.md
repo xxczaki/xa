@@ -47,7 +47,7 @@ There are 7 options:
 
 > See [example.js](https://github.com/xxczaki/xa/blob/master/example.js) file.
 
-<p><img src="https://i.imgur.com/UjcfM5F.png" alt="Example"></p>
+<p><img src="https://cdn.rawgit.com/xxczaki/xa/01809227/example.svg" alt="Example"></p>
 
 ## Customize
 
