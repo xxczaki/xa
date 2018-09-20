@@ -47,13 +47,19 @@ There are 7 options:
 
 > See [example.js](https://github.com/xxczaki/xa/blob/master/example.js) file.
 
-<p><img src="https://cdn.rawgit.com/xxczaki/xa/01809227/example.svg" alt="Example"></p>
+```js
+const xa = require('xa');
+
+xa.info('SUCCESS', 'Finished converting file!');
+
+xa.warn('WARN', `This module is deprecated! Read more: ${xa.link('http://example.com')}`);
+```
 
 ## Customize
 
 xa uses [chalk](https://www.npmjs.com/package/chalk) for colorful output, so you can customize technically every color :unicorn: 
 
-You can also use 2 options for `xa.error` - `silent` or `exit` (see [index.js](https://github.com/xxczaki/xa/blob/5d0d4a627ad8b2928fae474238a4cd26ed63ebad/index.js#L32) for more information).
+You can also use 2 options for `xa.error` - `silent` or `loud` (see [index.js](https://github.com/xxczaki/xa/blob/master/index.js#L38) for more information).
 
 ## Thanks:
 
