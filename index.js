@@ -1,50 +1,62 @@
-const chalk = require('chalk');
+const chalk = require("chalk");
 
-// Color map
-const colorMap = {
-	error: 'red',
-	experimental: 'magenta',
-	info: 'green',
-	loading: 'blue',
-	off: 'gray',
-	on: 'white',
-	warn: 'yellow'
+const stdoutHandlerOptions = {
+	error: "red",
+	experimental: "magenta",
+	info: "green",
+	loading: "blue",
+	off: "gray",
+	on: "white",
+	warn: "yellow"
+};
+function stdoutHandler(options = stdoutHandlerOptions) {
+	return (type, label, message) => {
+		const color = options[type];
+		if (!color) {
+			process.stdout.write(
+				`${chalk.inverse.bold.white(label)} ${chalk.white(message)}\n`
+			);
+		} else {
+			process.stdout.write(
+				`${chalk.inverse.bold[color](label)} ${chalk[color](message)}\n`
+			);
+		}
+	};
+}
+
+class Logger {
+	constructor(options = defaultOptions) {
+		this.loggerDump = [];
+		this.handlers = options.handlers;
+	}
+
+	log(type, label, message) {
+		for (const handler of this.handlers) {
+			handler(type, label, message);
+		}
+	}
+}
+
+const defaultOptions = {
+	handlers: [stdoutHandler()]
 };
 
-// Background color & text
-const print = (type, label, message) => {
-	const color = colorMap[type];
-	console.log(
-		chalk.inverse.bold[color](` ${label} `),
-		chalk[color](message),
-		'\n'
-	);
+module.exports = {
+	Logger: (options = defaultOptions) =>
+		new Proxy(new Logger(options), {
+			get: function(target, name) {
+				switch (name) {
+					case "getDump":
+						return function() {
+							return target.loggerDump;
+						};
+					default:
+						return function(label, message) {
+							target.loggerDump.push({ label, message });
+							target.log(name, label, message);
+						};
+				}
+			}
+		}),
+	stdoutHandler
 };
-
-// Log types
-const info = (label, message) => print('info', label, message);
-const warn = (label, message) => print('warn', label, message);
-const loading = (label, message) => print('loading', label, message);
-const on = (label, message) => print('on', label, message);
-const off = (label, message) => print('off', label, message);
-const experimental = (label, message) => print('experimental', label, message);
-const error = (err, options) => {
-	const label = 'ERROR';
-	// Loud or silent error (default is loud)
-	if (!options) {
-		options = {loud: true, silent: false, label};
-	}
-	print('error', options.label || label, err);
-	if (options.silent) {
-		process.exit(1);
-	}
-	if (options.loud) {
-		throw new Error(err);
-	}
-};
-
-// Additional log types (command & url)
-const command = cmd => chalk.cyan(cmd);
-const link = url => chalk.cyan(url);
-
-module.exports = {info, loading, warn, experimental, on, off, error, command, link};
