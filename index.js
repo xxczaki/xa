@@ -7,7 +7,7 @@ const stdoutHandlerOptions = {
 	loading: 'blue',
 	off: 'gray',
 	on: 'white',
-	warn: 'yellow',
+	warn: 'yellow'
 };
 function stdoutHandler(options = stdoutHandlerOptions) {
 	return (type, label, message) => {
@@ -38,25 +38,25 @@ class Logger {
 }
 
 const defaultOptions = {
-	handlers: [stdoutHandler()],
+	handlers: [stdoutHandler()]
 };
 
 module.exports = {
 	logger: (options = defaultOptions) =>
 		new Proxy(new Logger(options), {
-			get: function(target, name) {
+			get: function (target, name) {
 				switch (name) {
 					case 'getDump':
-						return function() {
+						return function () {
 							return target.loggerDump;
 						};
 					default:
-						return function(label, message) {
+						return function (label, message) {
 							target.loggerDump.push({label, message});
 							target.log(name, label, message);
 						};
 				}
-			},
+			}
 		}),
-	stdoutHandler,
+	stdoutHandler
 };
