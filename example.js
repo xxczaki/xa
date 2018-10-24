@@ -25,10 +25,10 @@ const customizedLogger = logger({
 	handlers: [
 		stdoutHandler({
 			info: 'magenta',
-			error: 'blue',
-		}),
-	],
+			error: 'blue'
+		})
+	]
 });
 
-customizedLogger.info('INFO', "I'm customized stdoutHandler!");
+customizedLogger.info('INFO', 'Customized stdoutHandler!');
 customizedLogger.error('Something went wrong', 'it does not look good...');
