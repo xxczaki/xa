@@ -11,19 +11,20 @@
  
  <p align="center"><img src="https://i.imgur.com/LxRnkIN.png" alt="Screenshot"></p>
 
-## Installation 
+## Installation
 
-``` 
+```
 npm install --save xa
 ```
+
 <a href="https://www.patreon.com/akepinski">
 	<img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160">
 </a>
 
 ## Usage
 
-There are 7 options:
-  
+Default logger is usign only stdoutHandler which accepts these types of logging
+
 - `info: (label, message)`
 
 - `loading: (label, message)`
@@ -37,29 +38,81 @@ There are 7 options:
 - `off: (label, message)`
 
 - `error: (message)`
-  
-  You can also highlight commands & links:
-  
-  - `command: (cmd)`
-  - `link: (url)`
-  
+
 ## Example
 
 > See [example.js](https://github.com/xxczaki/xa/blob/master/example.js) file.
 
 ```js
-const xa = require('xa');
+const xa = require("xa");
 
-xa.info('SUCCESS', 'Finished converting file!');
+xa.info("SUCCESS", "Finished converting file!");
 
-xa.warn('WARN', `This module is deprecated! Read more: ${xa.link('http://example.com')}`);
+xa.warn(
+	"WARN",
+	`This module is deprecated!`
 ```
 
 ## Customize
 
-xa uses [chalk](https://www.npmjs.com/package/chalk) for colorful output, so you can customize technically every color :unicorn: 
+xa uses [chalk](https://www.npmjs.com/package/chalk) for colorful output, so you can customize technically every color :unicorn:
 
-You can also use 2 options for `xa.error` - `silent` or `loud` (see [index.js](https://github.com/xxczaki/xa/blob/master/index.js#L38) for more information).
+### Handlers
+
+```js
+Logger({
+	handlers: [
+		stdoutHandler({
+			info: "magenta",
+			error: "blue"
+		})
+	]
+});
+```
+
+Handlers are functions that are called when you are logging something.
+You are able to use predefined one or you can create it by your own like this:
+
+```js
+function mineHandler(options = defaultOptions) {
+	return (type, label, message) => {
+		switch (type) {
+			case "error":
+				DB.insert({
+					into: "errors",
+					date: new Date(),
+					message,
+					label
+				});
+				break;
+			default:
+				DB.insert({
+					into: "logs",
+					date: new Date(),
+					message,
+					label
+				});
+				break;
+		}
+	};
+}
+```
+
+### stdoutHandler customization
+
+stdoutHandler accepts object with names of acceptable log methods and their display color as values.
+
+```js
+const stdoutHandlerOptions = {
+	error: "red",
+	experimental: "magenta",
+	info: "green",
+	loading: "blue",
+	off: "gray",
+	on: "white",
+	warn: "yellow"
+};
+```
 
 ## Thanks:
 
@@ -70,6 +123,3 @@ You can also use 2 options for `xa.error` - `silent` or `loud` (see [index.js](h
 MIT © [Antoni Kepinski](https://akepinski.me)
 
 <a href="https://app.fossa.io/projects/git%2Bgithub.com%2Fxxczaki%2Fxa?ref=badge_large" alt="FOSSA Status"><img src="https://app.fossa.io/api/projects/git%2Bgithub.com%2Fxxczaki%2Fxa.svg?type=large"/></a>
-
-
-
