@@ -1,6 +1,6 @@
 // TIP: You can run 'node example.js' in the project directory to see the output in your terminal!
 
-const {logger, stdoutHandler} = require('.');
+const { logger, stdoutHandler } = require('.');
 
 const xa = logger();
 
@@ -10,7 +10,7 @@ xa.info('SUCCESS', 'Finished converting file!');
 
 xa.warn(
 	'WARN',
-	`This module is deprecated! Read more: ${xa.link('http://example.com','example.com')}`
+	`This module is deprecated! Read more: ${xa.link('http://example.com', 'example.com')}`
 );
 
 xa.experimental('EXPERIMENTAL', 'This feature is not implemented yet!');
