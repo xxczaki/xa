@@ -49,8 +49,9 @@ const xa = require("xa");
 xa.info("SUCCESS", "Finished converting file!");
 
 xa.warn(
-	"WARN",
-	`This module is deprecated!`
+	'WARN',
+	`This module is deprecated! Read more: ${xa.link('http://example.com')}`
+);
 ```
 
 ## Customize
