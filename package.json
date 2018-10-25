@@ -24,7 +24,7 @@
     "rules": {
       "unicorn/no-process-exit": null,
       "no-negated-condition": null,
-      "object-shorthand" null
+      "object-shorthand": null
     }
   }
 }
