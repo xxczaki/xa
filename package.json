@@ -18,11 +18,11 @@
   },
   "xo": {
     "rules": {
-      "unicorn/no-process-exit": 0,
-			"no-negated-condition": 0,
-			"object-shorthand" 0
+      "unicorn/no-process-exit": null,
+      "no-negated-condition": null,
+      "object-shorthand" null
     },
-		"prettier": true
+    "prettier": true
   },
   "devDependencies": {
     "xo": "*"
