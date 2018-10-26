@@ -1,6 +1,6 @@
 // TIP: You can run 'node example.js' in the project directory to see the output in your terminal!
 
-const { logger, stdoutHandler } = require('.');
+const {logger, stdoutHandler} = require('.');
 
 const xa = logger();
 
