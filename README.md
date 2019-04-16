@@ -1,7 +1,7 @@
 <p align="center">
   <img src="https://i.imgur.com/2n3U5I8.png" href="https://github.com/xxczaki/xa" height="256">
   <h2 align="center">xa</h2>
-  <p align="center">Beautiful & Customizable log messages in your terminal :heart:<p>
+  <p align="center">Simple console logger, that works in Node.js, Electron and the Browser :heart:<p>
   
 <p align="center">  
 <a href="https://travis-ci.org/xxczaki/xa"><img src="https://travis-ci.org/xxczaki/xa.svg?branch=master" alt="Build Status"></a> <a href="https://github.com/sindresorhus/xo"><img src="https://img.shields.io/badge/code_style-XO-5ed9c7.svg" alt="XO Code Style"></a> 
@@ -9,12 +9,12 @@
   </p>
   
  
- <p align="center"><img src="https://i.imgur.com/LxRnkIN.png" alt="Screenshot"></p>
+ <p align="center"><img src="screenshot.png" alt="Screenshot"></p>
 
 ## Installation
 
 ```
-npm install --save xa
+npm install xa
 ```
 
 <a href="https://www.patreon.com/akepinski">
@@ -23,97 +23,79 @@ npm install --save xa
 
 ## Usage
 
-Default logger is usign only stdoutHandler which accepts these types of logging
-
-- `info: (label, message)`
-
-- `loading: (label, message)`
-
-- `warn: (label, message)`
-
-- `experimental: (label, message)`
-
-- `on: (label, message)`
-
-- `off: (label, message)`
-
-- `error: (message)`
-
-## Example
-
-> See [example.js](https://github.com/xxczaki/xa/blob/master/example.js) file.
-
 ```js
-const xa = require("xa");
+const xa = require('xa');
 
-xa.info("SUCCESS", "Finished converting file!");
-
-xa.warn(
-	'WARN',
-	`This module is deprecated! Read more: ${xa.link('http://example.com')}`
-);
+xa.success('Build finished!');
+xa.custom('TITLE', 'Nice description', {titleColor: 'yellow', backgroundColor: '#212121'});
 ```
 
-## Customize
+## API
 
-xa uses [chalk](https://www.npmjs.com/package/chalk) for colorful output, so you can customize technically every color :unicorn:
+## xa
 
-### Handlers
+Main method
 
-```js
-Logger({
-	handlers: [
-		stdoutHandler({
-			info: "magenta",
-			error: "blue"
-		})
-	]
-});
-```
+### success(text)
 
-Handlers are functions that are called when you are logging something.
-You are able to use predefined one or you can create it by your own like this:
+**text**
 
-```js
-function mineHandler(options = defaultOptions) {
-	return (type, label, message) => {
-		switch (type) {
-			case "error":
-				DB.insert({
-					into: "errors",
-					date: new Date(),
-					message,
-					label
-				});
-				break;
-			default:
-				DB.insert({
-					into: "logs",
-					date: new Date(),
-					message,
-					label
-				});
-				break;
-		}
-	};
-}
-```
+Type: `string`
 
-### stdoutHandler customization
+A text you want to display
 
-stdoutHandler accepts object with names of acceptable log methods and their display color as values.
 
-```js
-const stdoutHandlerOptions = {
-	error: "red",
-	experimental: "magenta",
-	info: "green",
-	loading: "blue",
-	off: "gray",
-	on: "white",
-	warn: "yellow"
-};
-```
+### info(text)
+
+**text**
+
+Type: `string`
+
+A text you want to display
+
+### warning(text)
+
+**text**
+
+Type: `string`
+
+A text you want to display
+
+### error(text)
+
+**text**
+
+Type: `string`
+
+A text you want to display
+
+### custom(title, text, {titleColor, backgroundColor})
+
+**title**
+
+Type: `string`
+
+Title of the log. When in Electron, the title will be either `MAIN` or `RENDERER`.
+
+**text**
+
+Type: `string`
+
+A text you want to display
+
+**titleColor**
+
+Type: `string`
+Default: `white`
+
+Color of the title. It will be converted to HEX.
+
+**backgroundColor**
+
+Type: `string`
+Default: `black`
+
+Color of title's background. It will be converted to HEX.
 
 ## Thanks:
 
@@ -121,6 +103,4 @@ const stdoutHandlerOptions = {
 
 ## License
 
-MIT © [Antoni Kepinski](https://akepinski.me)
-
-<a href="https://app.fossa.io/projects/git%2Bgithub.com%2Fxxczaki%2Fxa?ref=badge_large" alt="FOSSA Status"><img src="https://app.fossa.io/api/projects/git%2Bgithub.com%2Fxxczaki%2Fxa.svg?type=large"/></a>
+MIT © [Antoni Kepinski](https://kepinski.me)
