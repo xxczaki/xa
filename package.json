@@ -1,30 +1,32 @@
 {
   "name": "xa",
   "version": "2.0.0",
-  "description": "Beautiful log messages in your terminal ❤",
+  "description": "Simple console logger, that works in Node.js, Electron and the Browser ❤",
   "main": "index.js",
   "author": "Antoni Kepinski <a@kepinski.me> (https://kepinski.me)",
   "bugs": {
     "url": "https://github.com/xxczaki/xa/issues"
   },
-	"scripts": {
-    "test": "xo"
+  "scripts": {
+    "test": "xo && ava"
   },
   "license": "MIT",
   "repository": "xxczaki/xa",
   "homepage": "https://github.com/xxczaki/xa",
   "dependencies": {
-    "chalk": "^2.4.1"
+    "browser-or-node": "^1.2.1",
+    "chalk": "^2.4.2",
+    "color": "^3.1.0",
+    "electron-is": "^3.0.0"
   },
-	"devDependencies": {
+  "devDependencies": {
+    "ava": "^1.4.1",
+    "execa": "^1.0.0",
     "xo": "*"
   },
   "xo": {
-    "esnext": true,
     "rules": {
-      "unicorn/no-process-exit": null,
-      "no-negated-condition": 0,
-      "object-shorthand": 0
+      "new-cap": "off"
     }
   }
 }
