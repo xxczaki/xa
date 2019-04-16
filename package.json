@@ -12,7 +12,7 @@
     "url": "https://github.com/xxczaki/xa/issues"
   },
   "scripts": {
-    "build": "babel index.js -o dist/index.mjs --minified",
+    "build": "parcel build index.js -o dist/index.mjs --no-source-maps",
     "test": "xo && ava"
   },
   "engines": {
@@ -29,11 +29,11 @@
     "electron-is": "^3.0.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.4.3",
     "@babel/core": "^7.4.3",
     "@babel/preset-env": "^7.4.3",
     "ava": "^1.4.1",
     "execa": "^1.0.0",
+    "parcel-bundler": "^1.12.3",
     "xo": "*"
   },
   "xo": {
