@@ -5,7 +5,7 @@ const Color = require('color');
 const {isBrowser} = require('browser-or-node');
 const is = require('electron-is');
 
-module.exports.success = text => {
+exports.success = text => {
 	if (isBrowser) {
 		console.log(' %cSUCCESS ' + text, 'background: green; border-radius: 2px');
 	}
