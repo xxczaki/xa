@@ -8,7 +8,11 @@
     "url": "https://github.com/xxczaki/xa/issues"
   },
   "scripts": {
+    "build": "babel index.js -o dist/index.mjs --minified",
     "test": "xo && ava"
+  },
+  "engines": {
+    "node": ">=8"
   },
   "license": "MIT",
   "repository": "xxczaki/xa",
@@ -17,9 +21,13 @@
     "browser-or-node": "^1.2.1",
     "chalk": "^2.4.2",
     "color": "^3.1.0",
+    "core-js": "^3.0.1",
     "electron-is": "^3.0.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
     "ava": "^1.4.1",
     "execa": "^1.0.0",
     "xo": "*"
