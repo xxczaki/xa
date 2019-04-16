@@ -1,62 +1,89 @@
+'use strict';
+
 const chalk = require('chalk');
+const Color = require('color');
+const {isBrowser} = require('browser-or-node');
+const is = require('electron-is');
 
-const stdoutHandlerOptions = {
-	error: 'red',
-	experimental: 'magenta',
-	info: 'green',
-	loading: 'blue',
-	off: 'gray',
-	on: 'white',
-	warn: 'yellow'
-};
-function stdoutHandler(options = stdoutHandlerOptions) {
-	return (type, label, message) => {
-		const color = options[type];
-		if (!color) {
-			process.stdout.write(
-				`${chalk.inverse.bold.white(label)} ${chalk.white(message)}\n`
-			);
-		} else {
-			process.stdout.write(
-				`${chalk.inverse.bold[color](label)} ${chalk[color](message)}\n`
-			);
-		}
-	};
-}
-
-class Logger {
-	constructor(options = defaultOptions) {
-		this.loggerDump = [];
-		this.handlers = options.handlers;
+module.exports.success = text => {
+	if (isBrowser) {
+		console.log(' %cSUCCESS ' + text, 'background: green; border-radius: 2px');
 	}
 
-	log(type, label, message) {
-		for (const handler of this.handlers) {
-			handler(type, label, message);
-		}
+	if (is.main()) {
+		console.log(` ${chalk.bgGreen.black(' MAIN ')} ${text}`);
 	}
-}
 
-const defaultOptions = {
-	handlers: [stdoutHandler()]
+	if (is.renderer()) {
+		console.log(` ${chalk.bgGreen.black(' RENDERER ')} ${text}`);
+	}
+
+	console.log(` ${chalk.bgGreen.black(' SUCCESS ')} ${text}`);
 };
 
-module.exports = {
-	logger: (options = defaultOptions) =>
-		new Proxy(new Logger(options), {
-			get: function (target, name) {
-				switch (name) {
-					case 'getDump':
-						return function () {
-							return target.loggerDump;
-						};
-					default:
-						return function (label, message) {
-							target.loggerDump.push({label, message});
-							target.log(name, label, message);
-						};
-				}
-			}
-		}),
-	stdoutHandler
+exports.info = text => {
+	if (isBrowser) {
+		console.log(' %cINFO ' + text, 'background: blue; border-radius: 2px');
+	}
+
+	if (is.main()) {
+		console.log(` ${chalk.bgBlue(' MAIN ')} ${text}`);
+	}
+
+	if (is.renderer()) {
+		console.log(` ${chalk.bgBlue(' RENDERER ')} ${text}`);
+	}
+
+	console.log(` ${chalk.bgBlue(' INFO ')} ${text}`);
+};
+
+exports.warning = text => {
+	if (isBrowser) {
+		console.log(' %cWARNING ' + text, 'background: yellow; border-radius: 2px');
+	}
+
+	if (is.main()) {
+		console.log(` ${chalk.bgYellow.black(' MAIN ')} ${text}`);
+	}
+
+	if (is.renderer()) {
+		console.log(` ${chalk.bgYellow.black(' RENDERER ')} ${text}`);
+	}
+
+	console.log(` ${chalk.bgYellow.black(' WARNING ')} ${text}`);
+};
+
+exports.error = text => {
+	if (isBrowser) {
+		console.log(' %cERROR ' + text, 'background: red; border-radius: 2px');
+	}
+
+	if (is.main()) {
+		console.log(` ${chalk.bgRed(' MAIN ')} ${text}`);
+	}
+
+	if (is.renderer()) {
+		console.log(` ${chalk.bgRed(' RENDERER ')} ${text}`);
+	}
+
+	console.log(` ${chalk.bgRed(' ERROR ')} ${text}`);
+};
+
+exports.custom = (title, text, {titleColor, backgroundColor}) => {
+	const color = Color(titleColor).hex();
+	const bgColor = Color(backgroundColor).hex();
+
+	if (isBrowser) {
+		console.log(` %c${title} ` + text, `color: ${color || 'white'}; background: ${bgColor || 'black'}; border-radius: 2px`);
+	}
+
+	if (is.main()) {
+		console.log(` ${chalk.bgGreen.black(' MAIN ')} ${text}`);
+	}
+
+	if (is.renderer()) {
+		console.log(` ${chalk.bgGreen.black(' RENDERER ')} ${text}`);
+	}
+
+	console.log(` ${chalk.bgHex(bgColor).hex(color)(` ${title} `)} ${text}`);
 };
