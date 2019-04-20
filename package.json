@@ -1,18 +1,16 @@
 {
   "name": "xa",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Simple console logger, that works in Node.js, Electron and the Browser ❤",
   "main": "index.js",
   "files": [
-    "index.js",
-    "dist/index.mjs"
+    "index.js"
   ],
   "author": "Antoni Kepinski <a@kepinski.me> (https://kepinski.me)",
   "bugs": {
     "url": "https://github.com/xxczaki/xa/issues"
   },
   "scripts": {
-    "build": "parcel build index.js -o dist/index.mjs --no-source-maps",
     "test": "xo && ava"
   },
   "engines": {
@@ -29,11 +27,8 @@
     "electron-is": "^3.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.3",
-    "@babel/preset-env": "^7.4.3",
     "ava": "^1.4.1",
     "execa": "^1.0.0",
-    "parcel-bundler": "^1.12.3",
     "xo": "*"
   },
   "xo": {
