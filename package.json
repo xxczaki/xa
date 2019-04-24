@@ -9,7 +9,7 @@
 	},
 	"scripts": {
 		"build": "del dist && tsc",
-		"test": "xo && ava",
+		"test": "xo && npm run build && ava",
 		"prepublishOnly": "npm run build"
 	},
 	"engines": {
