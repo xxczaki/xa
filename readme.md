@@ -9,9 +9,18 @@
   </p>
   
  
- <p align="center"><img src="screenshot.png" alt="Screenshot"></p>
+<p align="center"><img src="screenshot.png" alt="Screenshot"></p>
 
-## Installation
+---
+
+## Highlights
+
+* Simple API
+* Works in Node.js, Electron and the Browser
+* Customizable
+* Written in TypeScript
+
+## Install
 
 ```
 npm install xa
