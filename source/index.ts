@@ -1,13 +1,18 @@
 'use strict';
 
-const chalk = require('chalk');
-const Color = require('color');
-const {isBrowser} = require('browser-or-node');
-const is = require('electron-is');
+import chalk from 'chalk';
+import Color from 'color';
+import isBrowser from 'is-in-browser';
+import is from 'electron-is';
 
-exports.success = text => {
+interface Options {
+	titleColor?: string;
+	backgroundColor?: string;
+}
+
+exports.success = (text: string) => {
 	if (isBrowser) {
-		console.log(' %cSUCCESS ' + text, 'background: green; border-radius: 2px');
+		console.log(' %cSUCCESS', `%c${text}`, 'background: green; border-radius: 2px');
 	}
 
 	if (is.main()) {
@@ -21,9 +26,9 @@ exports.success = text => {
 	console.log(` ${chalk.bgGreen.black(' SUCCESS ')} ${text}`);
 };
 
-exports.info = text => {
+exports.info = (text: string) => {
 	if (isBrowser) {
-		console.log(' %cINFO ' + text, 'background: blue; border-radius: 2px');
+		console.log(' %cINFO', `%c${text}`, 'background: blue; border-radius: 2px');
 	}
 
 	if (is.main()) {
@@ -37,9 +42,9 @@ exports.info = text => {
 	console.log(` ${chalk.bgBlue(' INFO ')} ${text}`);
 };
 
-exports.warning = text => {
+exports.warning = (text: string) => {
 	if (isBrowser) {
-		console.log(' %cWARNING ' + text, 'background: yellow; border-radius: 2px');
+		console.log(' %cWARNING', `%c${text}`, 'background: yellow; border-radius: 2px');
 	}
 
 	if (is.main()) {
@@ -53,9 +58,9 @@ exports.warning = text => {
 	console.log(` ${chalk.bgYellow.black(' WARNING ')} ${text}`);
 };
 
-exports.error = text => {
+exports.error = (text: string) => {
 	if (isBrowser) {
-		console.log(' %cERROR ' + text, 'background: red; border-radius: 2px');
+		console.log(' %cERROR', `%c${text}`, 'background: red; border-radius: 2px');
 	}
 
 	if (is.main()) {
@@ -69,12 +74,12 @@ exports.error = text => {
 	console.log(` ${chalk.bgRed(' ERROR ')} ${text}`);
 };
 
-exports.custom = (title, text, {titleColor, backgroundColor}) => {
+exports.custom = (title: string, text: string, {titleColor, backgroundColor}: Options) => {
 	const color = Color(titleColor).hex();
 	const bgColor = Color(backgroundColor).hex();
 
 	if (isBrowser) {
-		console.log(` %c${title} ` + text, `color: ${color || 'white'}; background: ${bgColor || 'black'}; border-radius: 2px`);
+		console.log(` %c${title}`, `%c${text}`, `color: ${color || 'white'}; background: ${bgColor || 'black'}; border-radius: 2px`);
 	}
 
 	if (is.main()) {
