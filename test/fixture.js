@@ -1,4 +1,4 @@
-const xa = require('.');
+const xa = require('../dist');
 
 console.log('\n');
 
