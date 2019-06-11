@@ -29,7 +29,7 @@
 		"@types/color": "^3.0.0",
 		"@types/execa": "^0.9.0",
 		"@typescript-eslint/eslint-plugin": "^1.7.0",
-		"ava": "^1.4.1",
+		"ava": "^2.1.0",
 		"del-cli": "^1.1.0",
 		"eslint-config-xo-typescript": "^0.10.1",
 		"execa": "^1.0.0",
