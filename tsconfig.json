@@ -1,11 +1,13 @@
+
 {
 	"extends": "@akepinski/tsconfig",
 	"compilerOptions": {
-		"incremental": true,
 		"outDir": "dist",
-		"target": "esnext"
+		"target": "es5",
+		"sourceMap": false,
+		"incremental": false
 	},
 	"include": [
-		"source"
+		"src/**/*"
 	]
 }
