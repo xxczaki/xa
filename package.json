@@ -1,10 +1,15 @@
 {
 	"name": "xa",
-	"version": "2.2.0",
+	"version": "2.2.1",
 	"description": "Simple console logger, that works in Node.js, Electron and the Browser ❤",
 	"main": "dist/index.js",
 	"module": "dist/index.esm.js",
 	"types": "dist/index.d.ts",
+	"files": [
+		"dist/index.js",
+		"dist/index.esm.js",
+		"dist/index.d.ts"
+	],
 	"author": "Antoni Kepinski <a@kepinski.me> (https://kepinski.me)",
 	"bugs": {
 		"url": "https://github.com/xxczaki/xa/issues"
