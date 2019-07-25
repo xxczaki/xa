@@ -1,6 +1,6 @@
 {
 	"name": "xa",
-	"version": "2.2.1",
+	"version": "2.2.2",
 	"description": "Simple console logger, that works in Node.js, Electron and the Browser ❤",
 	"main": "dist/index.js",
 	"module": "dist/index.esm.js",
