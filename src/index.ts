@@ -10,7 +10,7 @@ interface Options {
 }
 
 exports.success = (text: string) => {
-	if (typeof window === 'undefined') {
+	if (typeof window !== 'undefined') {
 		console.log(' %cSUCCESS', `%c${text}`, 'background: green; border-radius: 2px');
 	}
 
@@ -26,7 +26,7 @@ exports.success = (text: string) => {
 };
 
 exports.info = (text: string) => {
-	if (typeof window === 'undefined') {
+	if (typeof window !== 'undefined') {
 		console.log(' %cINFO', `%c${text}`, 'background: blue; border-radius: 2px');
 	}
 
@@ -42,7 +42,7 @@ exports.info = (text: string) => {
 };
 
 exports.warning = (text: string) => {
-	if (typeof window === 'undefined') {
+	if (typeof window !== 'undefined') {
 		console.log(' %cWARNING', `%c${text}`, 'background: yellow; border-radius: 2px');
 	}
 
@@ -58,7 +58,7 @@ exports.warning = (text: string) => {
 };
 
 exports.error = (text: string) => {
-	if (typeof window === 'undefined') {
+	if (typeof window !== 'undefined') {
 		console.log(' %cERROR', `%c${text}`, 'background: red; border-radius: 2px');
 	}
 
@@ -77,7 +77,7 @@ exports.custom = (title: string, text: string, {titleColor, backgroundColor}: Op
 	const color = Color(titleColor).hex();
 	const bgColor = Color(backgroundColor).hex();
 
-	if (typeof window === 'undefined') {
+	if (typeof window !== 'undefined') {
 		console.log(` %c${title}`, `%c${text}`, `color: ${color || 'white'}; background: ${bgColor || 'black'}; border-radius: 2px`);
 	}
 
