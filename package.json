@@ -1,6 +1,6 @@
 {
 	"name": "xa",
-	"version": "2.2.2",
+	"version": "2.3.0",
 	"description": "Simple console logger, that works in Node.js, Electron and the Browser ❤",
 	"main": "dist/index.js",
 	"module": "dist/index.esm.js",
@@ -38,11 +38,11 @@
 		"@types/color": "^3.0.0",
 		"@typescript-eslint/eslint-plugin": "^1.13.0",
 		"@typescript-eslint/parser": "^1.13.0",
-		"ava": "^2.2.0",
+		"ava": "^2.3.0",
 		"cpy-cli": "^2.0.0",
 		"del-cli": "^2.0.0",
 		"eslint-config-xo-typescript": "^0.15.0",
-		"execa": "^2.0.3",
+		"execa": "^2.0.4",
 		"ts-node": "^8.3.0",
 		"typescript": "^3.5.3",
 		"xo": "*"
