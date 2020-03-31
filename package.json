@@ -16,9 +16,8 @@
 	},
 	"scripts": {
 		"prebuild": "del-cli dist",
-		"esm": "tsc --module esnext && cpy dist/index.js dist --rename index.esm.js",
-		"cjs": "tsc --module commonjs",
-		"build": "npm run esm && npm run cjs",
+		"cjs": "tsc",
+		"build": "npm run cjs",
 		"test": "xo && npm run build && ava",
 		"prepublishOnly": "npm run build"
 	},
@@ -39,7 +38,6 @@
 		"@typescript-eslint/eslint-plugin": "^1.13.0",
 		"@typescript-eslint/parser": "^1.13.0",
 		"ava": "^2.3.0",
-		"cpy-cli": "^2.0.0",
 		"del-cli": "^2.0.0",
 		"eslint-config-xo-typescript": "^0.15.0",
 		"execa": "^2.0.4",
