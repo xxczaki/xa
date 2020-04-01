@@ -38,7 +38,7 @@
 		"@typescript-eslint/eslint-plugin": "^1.13.0",
 		"@typescript-eslint/parser": "^1.13.0",
 		"ava": "^2.3.0",
-		"del-cli": "^2.0.0",
+		"del-cli": "^3.0.0",
 		"eslint-config-xo-typescript": "^0.15.0",
 		"execa": "^2.0.4",
 		"ts-node": "^8.3.0",
