@@ -28,7 +28,6 @@ const custom = (title: string, text: string, {titleColor, backgroundColor}: Opti
 	console.log(` ${chalk.bgHex(bgColor).hex(color)(` ${title} `)} ${text}`);
 };
 
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 const factory = (title: string, backgroundColor: string) => (text: string): void => custom(title, text, {backgroundColor});
 
 export = {
