@@ -1,76 +1,74 @@
 {
-	"name": "xa",
-	"version": "2.3.0",
-	"description": "Simple console logger, that works in Node.js, Electron and the Browser ❤",
-	"main": "dist/index.js",
-	"module": "dist/index.esm.js",
-	"types": "dist/index.d.ts",
-	"files": [
-		"dist/index.js",
-		"dist/index.esm.js",
-		"dist/index.d.ts"
-	],
-	"author": "Antoni Kepinski <a@kepinski.me> (https://kepinski.me)",
-	"bugs": {
-		"url": "https://github.com/xxczaki/xa/issues"
-	},
-	"scripts": {
-		"prebuild": "del-cli dist",
-		"cjs": "tsc",
-		"build": "npm run cjs",
-		"test": "xo && npm run build && ava",
-		"prepublishOnly": "npm run build"
-	},
-	"engines": {
-		"node": ">=8"
-	},
-	"license": "MIT",
-	"repository": "xxczaki/xa",
-	"homepage": "https://github.com/xxczaki/xa",
-	"dependencies": {
-		"chalk": "^2.4.2",
-		"color": "^3.1.2",
-		"electron-is": "^3.0.0"
-	},
-	"devDependencies": {
-		"@akepinski/tsconfig": "0.0.2",
-		"@types/color": "^3.0.0",
-		"@typescript-eslint/eslint-plugin": "^1.13.0",
-		"@typescript-eslint/parser": "^1.13.0",
-		"ava": "^2.3.0",
-		"del-cli": "^2.0.0",
-		"eslint-config-xo-typescript": "^0.15.0",
-		"execa": "^2.0.4",
-		"ts-node": "^8.3.0",
-		"typescript": "^3.5.3",
-		"xo": "*"
-	},
-	"sideEffects": false,
-	"ava": {
-		"babel": false,
-		"compileEnhancements": false,
-		"extensions": [
-			"ts"
-		],
-		"require": [
-			"ts-node/register"
-		]
-	},
-	"xo": {
-		"envs": [
-			"node",
-			"browser"
-		],
-		"extends": "xo-typescript",
-		"extensions": [
-			"ts"
-		],
-		"rules": {
-			"ava/no-ignored-test-files": "off",
-			"new-cap": "off"
-		},
-		"ignores": [
-			"test/fixture.js"
-		]
-	}
+    "name": "xa",
+    "version": "2.4.0",
+    "description": "Simple console logger, that works in Node.js, Electron and the Browser ❤",
+    "main": "dist/index.js",
+    "module": "dist/index.esm.js",
+    "types": "dist/index.d.ts",
+    "files": [
+        "dist/index.js",
+        "dist/index.esm.js",
+        "dist/index.d.ts"
+    ],
+    "author": "Antoni Kepinski <a@kepinski.me> (https://kepinski.me)",
+    "bugs": {
+        "url": "https://github.com/xxczaki/xa/issues"
+    },
+    "scripts": {
+        "prebuild": "del-cli dist",
+        "cjs": "tsc",
+        "build": "npm run cjs",
+        "test": "xo && npm run build && ava",
+        "prepublishOnly": "npm run build"
+    },
+    "engines": {
+        "node": ">=8"
+    },
+    "license": "MIT",
+    "repository": "xxczaki/xa",
+    "homepage": "https://github.com/xxczaki/xa",
+    "dependencies": {
+        "chalk": "^3.0.0",
+        "color": "^3.1.2",
+        "electron-is": "^3.0.0"
+    },
+    "devDependencies": {
+        "@akepinski/tsconfig": "0.0.2",
+        "@types/color": "^3.0.1",
+        "@typescript-eslint/eslint-plugin": "^2.26.0",
+        "@typescript-eslint/parser": "^2.26.0",
+        "ava": "^3.5.2",
+        "del-cli": "^3.0.0",
+        "eslint-config-xo-typescript": "^0.27.0",
+        "execa": "^4.0.0",
+        "ts-node": "^8.8.1",
+        "typescript": "^3.8.3",
+        "xo": "*"
+    },
+    "sideEffects": false,
+    "ava": {
+        "extensions": [
+            "ts"
+        ],
+        "require": [
+            "ts-node/register"
+        ]
+    },
+    "xo": {
+        "envs": [
+            "node",
+            "browser"
+        ],
+        "extends": "xo-typescript",
+        "extensions": [
+            "ts"
+        ],
+        "rules": {
+            "new-cap": "off",
+            "@typescript-eslint/prefer-readonly-parameter-types": "off"
+        },
+        "ignores": [
+            "test/*"
+        ]
+    }
 }
